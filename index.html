@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSheets Email Collector</title>
+
+</head>
+
+<body>
+  <h1>GSheets Email Collector</h1>
+  <p>Try out the live demo below</p>
+  <form id="email-form"
+    action="https://script.google.com/macros/s/AKfycbwCHsJ7w9c7-SaQe8eehv2gXT9Db9ZYhpYmPNSbN9fBMtKkmMokqAVGwNFeBmDORAax/exec"
+    method="post"><label for="email"></label><input type="email" name="email" placeholder="Use a fake email address">
+    <button type="submit">Test Product</button>
+  </form>
+  <script>
+    document.getElementById("email-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      fetch(this.action, {
+        method: this.method,
+        body: new FormData(this),
+      }).then(response => {
+        if (response.ok) {
+          window.open("https://docs.google.com/spreadsheets/d/11ZPSSWJ2S-4QZVTvXhvuQpuTHnNAA__mrArvM0CU2JI/edit?usp=sharing", "_blank");
+        }
+      }).catch(error => console.error(error));
+    });
+  </script>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p>A simple, fast and easy way to collect emails on your landing page with a scalable solution. Contact fhinder@gmail.com for access.</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  </div>
+
+</body>
+
+</html>
